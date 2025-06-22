@@ -7,6 +7,7 @@ import multer from "multer";
 import path from "path";
 import { getAttachmentParameter } from "./libs/file";
 import { AppError, errorHandler } from "./middleware/errorHandler";
+import cors from 'cors'
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ function useModel(contents: ContentListUnion) {
 const upload = multer({ dest: "./upload" });
 const app = express();
 app.use(express.json());
+app.use(cors());
 app.post(
   "/generate-text",
   async (req: Request<{}, {}, { prompt: string }>, res, next) => {

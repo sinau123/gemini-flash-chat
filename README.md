@@ -5,6 +5,21 @@ Follow these steps to set up the server.
 - Node.js v18+
 - npm or Yarn
 
+## Client
+### Client Configuration
+Create a .env file in the client directory
+```env
+VITE_API_URL=http://localhost:3000/
+
+```
+
+### Client Installation
+```bash
+cd client
+npm install
+npm run dev
+```
+
 ## Server
 ### Server Configuration
 Create a .env file in the server directory
